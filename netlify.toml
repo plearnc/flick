@@ -1,0 +1,14 @@
+# Flick is a single self-contained static HTML file: no framework,
+# no package manager and no build step. Netlify publishes the repo root as-is.
+[build]
+  publish = "."
+  command = ""
+
+# The app lives in "Flick (3).html" and there is no index.html, so send
+# visitors of the site root to it. A redirect is used rather than a 200
+# rewrite because rewrites to a filename containing spaces don't resolve.
+# 302 (temporary) so browsers don't cache it if an index.html is added later.
+[[redirects]]
+  from = "/"
+  to = "/Flick%20(3).html"
+  status = 302
